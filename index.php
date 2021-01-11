@@ -1,16 +1,11 @@
 <?php
-
-
 session_start();
-
 $mysql_connect = mysqli_connect("localhost", "id15829218_shopify", "Shopify@12345", "id15829218_shopifybackend");
 
 // check if database connected properly
 if(!$mysql_connect){
     die(mysqli_connect_error());
 }
-
-
 // see if user login
 // if login grab private image of user and every public image
 // if not login grab every public image
@@ -25,9 +20,8 @@ else{
 
 $row = $mysql_connect -> query($sqlquery);
 }
-
-
 ?>
+
 <?php
 include 'header.php';
 ?>
@@ -70,7 +64,6 @@ foreach( $row as $image){
         // grab image name
         $imageName = explode('.',$image['image_name']);
         $imageName = $imageName[0];
-
         // print image 
         echo("<img src = './$userName/".$image['image_name']."' width='200' height='200' >");
         echo("<p>Image name: ".$imageName);
@@ -79,11 +72,9 @@ foreach( $row as $image){
     }
     // user login and current picture was not publish by user
     elseif(isset($_SESSION['username']) && strcmp($image['username'],$userName) !=0){
-
         // image name
         $imageName = explode('.',$image['image_name']);
         $imageName = $imageName[0];
-
         // print image
         echo("<img src = './upload_image/".$image['image_name']."' width='200' height='200' >");
         echo("<p>Image name: ".$imageName);
@@ -96,20 +87,15 @@ foreach( $row as $image){
         // image name
         $imageName = explode('.',$image['image_name']);
         $imageName = $imageName[0];
-
         // print image
         echo("<img src = './upload_image/".$image['image_name']."' width='200' height='200' >");
         echo("<p>Image name: ".$imageName);
         echo '<br>';
         echo("Image uploaded by: ".$image['username']."</p>");
     }
-
-      
     echo '</div>';
-
     // next column
     $col += 1;
-
 }
 echo("</div>");
 echo("</div>");
