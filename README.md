@@ -2,7 +2,7 @@
 Shopify back-end application    
 Task ADD image(s) to the repository:        
  1. one / bulk / enormous amount of images
-     1. test
+    1. test
  2. private or public (permissions)
  3. secure uploading and stored images
 # URL
