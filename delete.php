@@ -112,7 +112,7 @@ include 'header.php';
             foreach($rows as $row){
 
                 // check if it is a private or public image
-                // if private delete in user directory if public, dkete in user and public directory
+                // if private delete in user directory if public, delete in user and public directory
                 if($row['private_image'] == 1){
                     $image_delete = unlink("./".$directory."/".$row['image_name']);
                     $image_delete2 = True;
