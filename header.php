@@ -17,10 +17,13 @@
         <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/login_page.php">Login</a>
+        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/login_page.php">LogIn</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/add.php">Add</a>
+        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/add.php">Add Images</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/delete.php">Delete Images</a>
       </li>
       <!-- if user login show logout option. If not login do not display -->
       <?php
