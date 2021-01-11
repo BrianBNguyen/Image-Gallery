@@ -96,7 +96,7 @@ include 'header.php';
     echo("</div>");
     ?>
     <div style = "text-align: center; ">
-    <button type="submit"  id="delete" name="delete">delete images</button>
+    <button type="submit"  id="delete" name="delete">Delete Images</button>
 </div>
 </form>
 
