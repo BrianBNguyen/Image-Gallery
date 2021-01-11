@@ -2,10 +2,9 @@
 Shopify back-end application 
 
 Task:
-ADD image(s) to the repository
--one / bulk / enormous amount of images
--private or public (permissions)
--secure uploading and stored images
-
+ Markup : 1. A numbered list
+              1. one / bulk / enormous amount of images
+              2. private or public (permissions)
+              3. secure uploading and stored images
 # URL
 Hosted Link: https://shopifybackendchallenge.000webhostapp.com/
