@@ -8,7 +8,6 @@ if(!$mysql_connect){
     die(mysqli_connect_error());
 }
 else{
-
     // if user did not login redirect to login page
     // once user login redirect back to add page
     if(!isset($_SESSION['username']))
@@ -16,11 +15,8 @@ else{
         $msg = "please login first";
         $_SESSION['login_redirect'] = $_SERVER['PHP_SELF'];
         $_SESSION['login_message'] = "Please log in first before adding an image";
-
         header("Location: login_page.php");
-
     }
-   
 ?>
 <?php
 include 'header.php';
@@ -95,7 +91,6 @@ include 'header.php';
         
             // go through each image user selected 
             foreach ($_FILES['images']['name'] as $index => $images){
-                
             // print($_FILES['images']['name'][$index]." this is the key".$index);
             // grab image information 
                 $image_name = $_FILES['images']['name'][$index];
@@ -133,7 +128,6 @@ include 'header.php';
                     echo '<br>';
 
                 }
-                
                 // add to database 
                 if($image_upload_success){
                     $userName = $_SESSION['username'];
@@ -141,7 +135,6 @@ include 'header.php';
                     $sqlquery = "INSERT INTO image_gallery (image_id,username, image_name, private_image) VALUES ('$image_id','$userName','$image_name',$private_bit)";
                     $mysql_connect -> query($sqlquery);
                 }
-            
             }// end of iterate through each image for loop 
         
         }// end of if upload isset
