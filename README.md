@@ -1,20 +1,8 @@
 # Image-Gallery
 Shopify back-end application 
-
-1. A numbered list
-              1. one / bulk / enormous amount of images
-              2. private or public (permissions)
-              3. secure uploading and stored images
-              
-              
-1. A numbered list
-              1. A nested numbered list
-              2. Which is numbered
-          2. Which is numbered
-          
+Task:        
 1. Item 1
-1. Item 2
-1. Item 3
+
    1. Item 3a
    1. Item 3b
 # URL
