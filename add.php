@@ -16,11 +16,8 @@ else{
         $msg = "please login first";
         $_SESSION['login_redirect'] = $_SERVER['PHP_SELF'];
         $_SESSION['login_message'] = "Please log in first before adding an image";
-
         header("Location: login_page.php");
-
     }
-   
 ?>
 <?php
 include 'header.php';
@@ -47,24 +44,19 @@ include 'header.php';
             </td>
             <td>
                 <input type='file' name='images[]' id='images[]' multiple>
-
             </td>
         </tr>
         <tr>
             <td>
                  <label for="private_image">Check this box to make your uploaded images private:
-
             </td>
             <td>
                  <input type = "checkbox" name = "private_image" id = "private_image" value = "private">
-
             </td>
         </tr>
     </table>
-
         <br>
         <button type="submit"  id="upload" name="upload">upload images</button>
-
     </form>
     <br>
     <br>
@@ -132,22 +124,19 @@ include 'header.php';
                     print($image_name." was uploaded properly");
                     $image_upload_success = True;
                     echo '<br>';
-
                 }
-        
                 // add to database 
                 if($image_upload_success){
                     $userName = $_SESSION['username'];
                     $sqlquery = "INSERT INTO image_gallery (username, image_name, private_image) VALUES ('$userName','$image_name',$private_bit)";
                     $mysql_connect -> query($sqlquery);
                 }
-            
         
-            }
+            }// end of for loop
         
-        }
-    }
-}
+        }// end of  if post upload if statement
+    }// end of if isset username if statement
+} // end of else statement ( database connected properly)
 
 ?>
 </body>
