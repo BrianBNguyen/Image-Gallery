@@ -16,9 +16,16 @@
       <li class="nav-item active">
         <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/">Home <span class="sr-only">(current)</span></a>
       </li>
+      <!-- if user login don't show login -->
+      <?php
+      if(!isset($_SESSION['username'])){
+      ?>
       <li class="nav-item">
         <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/login_page.php">LogIn</a>
       </li>
+      <?php
+      }
+      ?>
       <li class="nav-item">
         <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/add.php">Add Images</a>
       </li>
