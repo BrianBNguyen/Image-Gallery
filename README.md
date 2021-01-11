@@ -1,7 +1,6 @@
 # Image-Gallery
 Shopify back-end application 
 
-Task:
 1. A numbered list
               1. one / bulk / enormous amount of images
               2. private or public (permissions)
