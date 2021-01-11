@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();
 
 $mysql_connect = mysqli_connect("localhost", "id15829218_shopify", "Shopify@12345", "id15829218_shopifybackend");
@@ -25,7 +24,6 @@ else{
 
 $row = $mysql_connect -> query($sqlquery);
 }
-
 
 ?>
 <?php
@@ -79,7 +77,6 @@ foreach( $row as $image){
         // grab image name
         $imageName = explode('.',$image['image_name']);
         $imageName = $imageName[0];
-
         // print image 
         echo("<img src = './$userName/".$image['image_name']."' width='200' height='200' >");
         echo("<p>Image name: ".$imageName);
@@ -88,11 +85,9 @@ foreach( $row as $image){
     }
     // user login and current picture was not publish by user
     elseif(isset($_SESSION['username']) && strcmp($image['username'],$userName) !=0){
-
         // image name
         $imageName = explode('.',$image['image_name']);
         $imageName = $imageName[0];
-
         // print image
         echo("<img src = './upload_image/".$image['image_name']."' width='200' height='200' >");
         echo("<p>Image name: ".$imageName);
@@ -101,7 +96,6 @@ foreach( $row as $image){
     }
     // user not login
     else{
-
         // image name
         $imageName = explode('.',$image['image_name']);
         $imageName = $imageName[0];
@@ -112,13 +106,9 @@ foreach( $row as $image){
         echo '<br>';
         echo("Image uploaded by: ".$image['username']."<br> $message</p>");
     }
-
-      
     echo '</div>';
-
     // next column
     $col += 1;
-
 }
 echo("</div>");
 echo("</div>");
