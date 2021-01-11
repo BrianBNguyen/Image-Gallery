@@ -1,6 +1,6 @@
 # Image-Gallery
 Shopify back-end application    
-Task ADD image(s) to the repository:  
+Tasks:  
  1. ADD image(s) to the repository
     1. one / bulk / enormous amount of images
     2. private or public (permissions)
