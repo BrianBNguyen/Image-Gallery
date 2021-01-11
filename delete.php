@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();
 
 $mysql_connect = mysqli_connect("localhost", "id15829218_shopify", "Shopify@12345", "id15829218_shopifybackend");
@@ -10,16 +9,15 @@ if(!$mysql_connect){
     die(mysqli_connect_error());
 }
 
-
 // see if user login
-// if login grab private image of user and every public image
-// if not login grab every public image
+// grab all image user uploaded 
 if(isset($_SESSION['username'])){
 $userName = $_SESSION['username'];
 $sqlquery = "SELECT * FROM image_gallery where username = '$userName'";
 
 $row = $mysql_connect -> query($sqlquery);
 }
+// redirect user to login page. Once user login redirect back to delete page 
 else{
     $msg = "please login first";
     $_SESSION['login_redirect'] = $_SERVER['PHP_SELF'];
@@ -62,8 +60,8 @@ include 'header.php';
             echo("<div  class='col-md-3'>");
         }
 
-        // if priavte image display private image
-        // else display public image 
+        // if priavte image display private image text
+        // else display public image text
         if($image['private_image'] == 1){
             $message = "private image";
         }
@@ -71,10 +69,10 @@ include 'header.php';
             $message = "public image";
         }
 
-        // user login and is cureent picture publish by user
+        // check if image is publish by user 
         if(isset($_SESSION['username']) && strcmp($image['username'],$userName) ==0)
         {
-            // image directory of usre
+            // get directory of user images
             $userDirectory = $userName;
             // grab image name
             $imageName = explode('.',$image['image_name']);
@@ -103,9 +101,10 @@ include 'header.php';
 </form>
 
 <?php
+    // user tried to delete images
     if(isset($_POST['delete_image'])){
         $delete_images = $_POST['delete_image'];
-       
+       // go through each image user trying to delete
         foreach($delete_images as $delete){
             $directory = $userName;
             $sqlquery = "SELECT * FROM image_gallery WHERE image_id='".$delete."'";
@@ -113,6 +112,7 @@ include 'header.php';
             foreach($rows as $row){
 
                 // check if it is a private or public image
+                // if public delete in user directory and public directory
                 if($row['private_image'] == 1){
                     $image_delete = unlink("./".$directory."/".$row['image_name']);
                     $image_delete2 = True;
@@ -121,23 +121,22 @@ include 'header.php';
                     $image_delete = unlink("./".$directory."/".$row['image_name']);
                     $image_delete2 = unlink("./upload_image/".$row['image_name']);
                 }
+                // check if file deleted properly 
                 if(!$image_delete || !$image_delete2)
                 {
                     print($row['image_name']." was not deleted properly try again");
                     echo '<br>';
-
-
                 }
+                // delete image from database 
                 else{
                     print($row['image_name']." was deleted properly");
                     $sqlquery = "DELETE FROM image_gallery WHERE image_id='".$delete."'";
                     $mysql_connect -> query($sqlquery);
                     echo '<br>';
                 }
-            }
-        }
+            }// end of row loop
+        } // end of deleted image loop
 
-
-    }
+    } // end of delete image post request if statemeent 
 
 ?>
