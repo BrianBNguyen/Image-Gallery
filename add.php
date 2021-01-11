@@ -16,8 +16,11 @@ else{
         $msg = "please login first";
         $_SESSION['login_redirect'] = $_SERVER['PHP_SELF'];
         $_SESSION['login_message'] = "Please log in first before adding an image";
+
         header("Location: login_page.php");
+
     }
+   
 ?>
 <?php
 include 'header.php';
@@ -32,7 +35,7 @@ include 'header.php';
 
 <body >
 <div style = "width:50%; margin: auto; ">
-    <form id = "login_form" name = "login_form" action="" method="POST" enctype = 'multipart/form-data'>
+    <form id = "add_form" name = "add_form" action="" method="POST" enctype = 'multipart/form-data'>
     <table style="width:100%">
         <tr>
             <th></th>
@@ -44,19 +47,24 @@ include 'header.php';
             </td>
             <td>
                 <input type='file' name='images[]' id='images[]' multiple>
+
             </td>
         </tr>
         <tr>
             <td>
                  <label for="private_image">Check this box to make your uploaded images private:
+
             </td>
             <td>
                  <input type = "checkbox" name = "private_image" id = "private_image" value = "private">
+
             </td>
         </tr>
     </table>
+
         <br>
         <button type="submit"  id="upload" name="upload">upload images</button>
+
     </form>
     <br>
     <br>
@@ -112,7 +120,6 @@ include 'header.php';
                 else{
                     $upload_result = move_uploaded_file($temp_image_name,'./'.$directoryName.'/'.$image_name);
                     $upload2 =True;
-
                 }
         
                 // check for upload errors 
@@ -124,19 +131,22 @@ include 'header.php';
                     print($image_name." was uploaded properly");
                     $image_upload_success = True;
                     echo '<br>';
+
                 }
+                
                 // add to database 
                 if($image_upload_success){
                     $userName = $_SESSION['username'];
-                    $sqlquery = "INSERT INTO image_gallery (username, image_name, private_image) VALUES ('$userName','$image_name',$private_bit)";
+                    $image_id = $userName.$image_name;
+                    $sqlquery = "INSERT INTO image_gallery (image_id,username, image_name, private_image) VALUES ('$image_id','$userName','$image_name',$private_bit)";
                     $mysql_connect -> query($sqlquery);
                 }
+            
+            }// end of iterate through each image for loop 
         
-            }// end of for loop
-        
-        }// end of  if post upload if statement
-    }// end of if isset username if statement
-} // end of else statement ( database connected properly)
+        }// end of if upload isset
+    }// end of if username isset
+}// end of else databse connected else statement
 
 ?>
 </body>
