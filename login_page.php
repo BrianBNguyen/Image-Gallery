@@ -65,17 +65,14 @@ if(isset($_SESSION['login_message'] ))
             </td>
             <td>
                  <input type='text' name='username' id='username'>
-
             </td>
         </tr>
         <tr>
             <td>
             <label for="col">Password: 
-
             </td>
             <td>
             <input type='password' name='password' id='password'>
-
             </td>
         </tr>
     </table>
@@ -83,15 +80,11 @@ if(isset($_SESSION['login_message'] ))
                 <button type="submit"  id="login" name="login">login</button>
                 <!-- redirect so signup page -->
                 <button type="submit" onclick="signup()" id="create_login" name="create_login">Sign Up</button>
-
-
     </form>
     <br>
     <br>
-
 </div>
 </body>
-
 <?php
 // account not in database
 if(isset($_POST['login'])){
