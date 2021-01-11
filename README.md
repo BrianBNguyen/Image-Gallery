@@ -11,6 +11,12 @@ Shopify back-end application
               1. A nested numbered list
               2. Which is numbered
           2. Which is numbered
+          
+1. Item 1
+1. Item 2
+1. Item 3
+   1. Item 3a
+   1. Item 3b
 # URL
 Hosted Link: https://shopifybackendchallenge.000webhostapp.com/
 
