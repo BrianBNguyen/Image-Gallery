@@ -104,6 +104,7 @@ include 'header.php';
 </div>
 </form>
 
+<div class="container">
 <?php
     // user tried to delete images
     if(isset($_POST['delete_image'])){
@@ -149,4 +150,5 @@ include 'header.php';
     } // end of delete image post request if statemeent 
 
 ?>
+</div>
 <script type="text/javascript" src="delete.js"></script>
