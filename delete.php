@@ -149,4 +149,4 @@ include 'header.php';
     } // end of delete image post request if statemeent 
 
 ?>
-<script type="text/javascript" src="selectall.js"></script>
+<script type="text/javascript" src="delete.js"></script>
