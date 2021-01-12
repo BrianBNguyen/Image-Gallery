@@ -94,7 +94,7 @@ if(isset($_POST['create_account'])){
         // keep track of username and redirect to main page 
         print("An account already exist with this username");
         echo("<br>");
-        print("Please pick another account");
+        print("Please pick another username");
     }   
     else{
         // add to datebase 
