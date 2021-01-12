@@ -57,11 +57,11 @@ include 'header.php';
         </tr>
     </table>
         <br>
-        <button type="submit"  id="upload" name="upload">upload images</button>
+        <button type="submit"  id="upload" name="upload">Upload Images</button>
     </form>
-    <br>
-    <br>
+
 </div>
+<div style = "width:50%; margin: auto; ">
 <?php
     // check if user is login 
     if(isset($_SESSION['username'])){
@@ -137,5 +137,7 @@ include 'header.php';
 }// end of else databse connected else statement
 
 ?>
+</div>
+
 </body>
 
