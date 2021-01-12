@@ -105,8 +105,7 @@ if(isset($_POST['create_account'])){
         echo'
         <script>
         window.location.replace("https://shopifybackendchallenge.000webhostapp.com/login_page.php");
-        </script>
-        ';   
+        </script> ';   
     }
 }
 
