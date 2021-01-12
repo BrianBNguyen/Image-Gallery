@@ -34,7 +34,10 @@ else{
 ?>
 <?php
 include 'header.php';
+?>
 
+<div style = "width:50%; margin: auto; ">
+<?php
 // user tried to add picture without logging in
 // or user created account successfully message 
 if(isset($_SESSION['login_message'] ))
@@ -42,8 +45,9 @@ if(isset($_SESSION['login_message'] ))
     print($_SESSION['login_message']);
     unset($_SESSION['login_message']);
 }
-
 ?>
+</div>
+<br>
 <head>
     <title>Login Page</title>
     <meta charset='UTF-8'>
@@ -73,18 +77,21 @@ if(isset($_SESSION['login_message'] ))
             </td>
             <td>
             <input type='password' name='password' id='password'>
+
             </td>
         </tr>
     </table>
                 <!-- login and redirect to main page -->
-                <button type="submit"  id="login" name="login">login</button>
+                <button type="submit"  id="login" name="login">Login</button>
                 <!-- redirect so signup page -->
                 <button type="submit" onclick="signup()" id="create_login" name="create_login">Sign Up</button>
     </form>
     <br>
     <br>
+
 </div>
 </body>
+
 <?php
 // account not in database
 if(isset($_POST['login'])){
