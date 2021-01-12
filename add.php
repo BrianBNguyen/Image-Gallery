@@ -61,9 +61,6 @@ include 'header.php';
     </form>
     <br>
     <br>
-    <?php
-    //print("username is ".$_SESSION['username']);
-    ?>
 </div>
 <?php
     // check if user is login 
@@ -88,7 +85,6 @@ include 'header.php';
         
             // go through each image user selected 
             foreach ($_FILES['images']['name'] as $index => $images){
-                
             // print($_FILES['images']['name'][$index]." this is the key".$index);
             // grab image information 
                 $image_name = $_FILES['images']['name'][$index];
