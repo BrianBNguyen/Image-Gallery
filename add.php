@@ -8,6 +8,7 @@ if(!$mysql_connect){
     die(mysqli_connect_error());
 }
 else{
+
     // if user did not login redirect to login page
     // once user login redirect back to add page
     if(!isset($_SESSION['username']))
@@ -17,6 +18,7 @@ else{
         $_SESSION['login_message'] = "Please log in first before adding an image";
         header("Location: login_page.php");
     }
+   
 ?>
 <?php
 include 'header.php';
@@ -26,7 +28,6 @@ include 'header.php';
     <title>Add Images</title>
     <meta charset='UTF-8'>
     <link rel="stylesheet" href="">
-
 </head>
 
 <body >
@@ -43,7 +44,6 @@ include 'header.php';
             </td>
             <td>
                 <input type='file' name='images[]' id='images[]' multiple>
-
             </td>
         </tr>
         <tr>
@@ -53,14 +53,11 @@ include 'header.php';
             </td>
             <td>
                  <input type = "checkbox" name = "private_image" id = "private_image" value = "private">
-
             </td>
         </tr>
     </table>
-
         <br>
         <button type="submit"  id="upload" name="upload">upload images</button>
-
     </form>
     <br>
     <br>
@@ -91,6 +88,7 @@ include 'header.php';
         
             // go through each image user selected 
             foreach ($_FILES['images']['name'] as $index => $images){
+                
             // print($_FILES['images']['name'][$index]." this is the key".$index);
             // grab image information 
                 $image_name = $_FILES['images']['name'][$index];
@@ -126,8 +124,8 @@ include 'header.php';
                     print($image_name." was uploaded properly");
                     $image_upload_success = True;
                     echo '<br>';
-
                 }
+                
                 // add to database 
                 if($image_upload_success){
                     $userName = $_SESSION['username'];
@@ -135,6 +133,7 @@ include 'header.php';
                     $sqlquery = "INSERT INTO image_gallery (image_id,username, image_name, private_image) VALUES ('$image_id','$userName','$image_name',$private_bit)";
                     $mysql_connect -> query($sqlquery);
                 }
+            
             }// end of iterate through each image for loop 
         
         }// end of if upload isset
