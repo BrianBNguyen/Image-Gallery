@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 $mysql_connect = mysqli_connect("localhost", "id15829218_shopify", "Shopify@12345", "id15829218_shopifybackend");
 
 // check if database connected properly
@@ -42,8 +43,8 @@ include 'header.php';
 
 <input id = "select_all" type = "checkbox" onclick = "checkAll(this,'delete_image[]')"> 
 </div>
-<form id = "delete_form" name = "delete_form" action="" method="POST" enctype = 'multipart/form-data'>
-
+<!-- make sure user is okay with deleting these images -->
+<form onsubmit = "return confirm_delete();"id = "delete_form" name = "delete_form" action="" method="POST" enctype = 'multipart/form-data'>
 
     <?php
     // new row every 4 columns
@@ -94,7 +95,6 @@ include 'header.php';
         echo '</div>';
         // next column
         $col += 1;
-
     }
     echo("</div>");
     echo("</div>");
@@ -103,7 +103,6 @@ include 'header.php';
     <button type="submit"  id="delete" name="delete">Delete Images</button>
 </div>
 </form>
-
 
 <?php
     // user tried to delete images
@@ -136,7 +135,6 @@ include 'header.php';
                 else{
                     $sqlquery = "DELETE FROM image_gallery WHERE image_id='".$delete."'";
                     $mysql_connect -> query($sqlquery);
-
                     echo '<br>';
                     // refresh page to show that it was deleted
                     echo'
