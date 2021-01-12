@@ -1,14 +1,12 @@
 <?php
 
 session_start();
-
 $mysql_connect = mysqli_connect("localhost", "id15829218_shopify", "Shopify@12345", "id15829218_shopifybackend");
 
 // check if database connected properly
 if(!$mysql_connect){
     die(mysqli_connect_error());
 }
-
 // see if user login
 // grab all image user uploaded 
 if(isset($_SESSION['username'])){
@@ -38,9 +36,15 @@ include 'header.php';
 <div style = "text-align: center; ">
 <h1 style = "margin:0 auto;">Your Images</h1>
 </div>
-<br>
-<br>
+<!-- select all checkbox  -->
+<div class="container">
+<label for="select_all">Select All: 
+
+<input id = "select_all" type = "checkbox" onclick = "checkAll(this,'delete_image[]')"> 
+</div>
 <form id = "delete_form" name = "delete_form" action="" method="POST" enctype = 'multipart/form-data'>
+
+
     <?php
     // new row every 4 columns
     $col = 0;
@@ -95,10 +99,11 @@ include 'header.php';
     echo("</div>");
     echo("</div>");
     ?>
-    <div style = "text-align: center; ">
+<div style = "text-align: center; ">
     <button type="submit"  id="delete" name="delete">Delete Images</button>
 </div>
 </form>
+
 
 <?php
     // user tried to delete images
@@ -112,7 +117,7 @@ include 'header.php';
             foreach($rows as $row){
 
                 // check if it is a private or public image
-                // if private delete in user directory if public, delete in user and public directory
+                // if public delete in user directory and public directory
                 if($row['private_image'] == 1){
                     $image_delete = unlink("./".$directory."/".$row['image_name']);
                     $image_delete2 = True;
@@ -121,18 +126,24 @@ include 'header.php';
                     $image_delete = unlink("./".$directory."/".$row['image_name']);
                     $image_delete2 = unlink("./upload_image/".$row['image_name']);
                 }
-                // check if file deleted properly 
+                // check if file deleted properly if not print it.
                 if(!$image_delete || !$image_delete2)
                 {
                     print($row['image_name']." was not deleted properly try again");
                     echo '<br>';
                 }
-                // delete image from database 
+                // delete image from database and refresh page 
                 else{
-                    print($row['image_name']." was deleted properly");
                     $sqlquery = "DELETE FROM image_gallery WHERE image_id='".$delete."'";
                     $mysql_connect -> query($sqlquery);
+
                     echo '<br>';
+                    // refresh page to show that it was deleted
+                    echo'
+                    <script>
+                    window.location.replace("https://shopifybackendchallenge.000webhostapp.com/delete.php");
+                    </script>
+                    ';    
                 }
             }// end of row loop
         } // end of deleted image loop
@@ -140,3 +151,4 @@ include 'header.php';
     } // end of delete image post request if statemeent 
 
 ?>
+<script type="text/javascript" src="selectall.js"></script>
