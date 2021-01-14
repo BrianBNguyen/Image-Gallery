@@ -26,7 +26,17 @@ else{
             // can not print anything before header otherwise won't work
             // keep track of username and redirect to main page 
             $_SESSION['username'] = $userName;
-            header("Location: index.php");
+
+            // if user tried to add/delete image but was not login redirect to hose page
+            if(isset($_SESSION['login_redirect'])){
+                $location = $_SESSION['login_redirect'];
+                unset($_SESSION['login_redirect']);
+                header("Location: $location");
+            }
+            // if use just tried to login regularly redirect to landing page 
+            else{
+                header("Location: index.php");
+            }
             exit;
         }   
     }
