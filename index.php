@@ -25,6 +25,8 @@ else{
 $row = $mysql_connect -> query($sqlquery);
 }
 
+// make sure page redirect to landing page
+$_SESSION['login_redirect'] = $_SERVER['PHP_SELF'];
 ?>
 <?php
 include 'header.php';
