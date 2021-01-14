@@ -27,7 +27,7 @@ else{
             // keep track of username and redirect to main page 
             $_SESSION['username'] = $userName;
 
-            // if user tried to add/delete image but was not login redirect to hose page
+            // if user was orginally on add/delete page redirect back to that page
             if(isset($_SESSION['login_redirect'])){
                 $location = $_SESSION['login_redirect'];
                 unset($_SESSION['login_redirect']);
