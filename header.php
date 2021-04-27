@@ -7,7 +7,7 @@
 </head>
 <!-- navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;" >
-  <a class="navbar-brand" href="#">Navbar</a>
+<a class="navbar-brand" href="https://shopifybackendchallenge.000webhostapp.com/">Image Gallery</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,7 +21,7 @@
       if(!isset($_SESSION['username'])){
       ?>
       <li class="nav-item">
-        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/login_page.php">LogIn</a>
+        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/login_page.php">Login</a>
       </li>
       <?php
       }
@@ -37,7 +37,7 @@
       if(isset($_SESSION['username'])){
       ?>
       <li class="nav-item">
-        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/logout.php">LogOut</a>
+        <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/logout.php">Logout</a>
       </li>
       <?php
       }
