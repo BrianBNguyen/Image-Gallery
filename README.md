@@ -1,5 +1,5 @@
 # Image-Gallery
-Shopify back-end application    
+Shopify Developer application    
 Tasks Build an image repository:  
  1. ADD image(s) to the repository
     1. one / bulk / enormous amount of images
