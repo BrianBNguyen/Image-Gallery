@@ -16,7 +16,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <!-- if user login don't show login -->
+      <!-- if user login don't show login option -->
       <?php
       if(!isset($_SESSION['username'])){
       ?>
@@ -32,7 +32,7 @@
       <li class="nav-item">
         <a class="nav-link" href="https://shopifybackendchallenge.000webhostapp.com/delete.php">Delete Images</a>
       </li>
-      <!-- if user login show logout option. If not login do not display -->
+      <!-- if user is login show logout option. -->
       <?php
       if(isset($_SESSION['username'])){
       ?>
