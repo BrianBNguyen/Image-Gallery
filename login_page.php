@@ -21,7 +21,7 @@ else{
         // get length of row
         $length = mysqli_num_rows($row);
 
-        // check fi account was found in database if found redirect to mainpage 
+        // check if account was found in database if found redirect to mainpage 
         if($length == 1){
             // can not print anything before header otherwise won't work
             // keep track of username and redirect to main page 
