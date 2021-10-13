@@ -87,6 +87,7 @@ include 'header.php';
             foreach ($_FILES['images']['name'] as $index => $images){
             // print($_FILES['images']['name'][$index]." this is the key".$index);
             // grab image information 
+            // tmp_name is the user image full directory
                 $image_name = $_FILES['images']['name'][$index];
                 $temp_image_name = $_FILES['images']['tmp_name'][$index];
                 $image_size = $_FILES['images']['size'][$index];
