@@ -13,7 +13,7 @@ else{
     // once user login redirect back to add page
     if(!isset($_SESSION['username']))
     {
-        $msg = "please login first";
+        
         $_SESSION['login_redirect'] = $_SERVER['PHP_SELF'];
         $_SESSION['login_message'] = "Please log in first before adding an image";
         header("Location: login_page.php");
