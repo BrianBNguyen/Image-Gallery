@@ -65,7 +65,7 @@ include 'header.php';
             echo("<div  class='col-md-3'>");
         }
 
-        // if priavte image display private image text
+        // if private image display private image text
         // else display public image text
         if($image['private_image'] == 1){
             $message = "private image";
