@@ -170,4 +170,4 @@ include 'header.php';
         var answer = confirm("are you sure you want to delete these images?");
         return answer;
     }
-    </script>
+</script>
