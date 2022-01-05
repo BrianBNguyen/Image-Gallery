@@ -4,9 +4,9 @@ Task A: Build an image repository.
 Task B: Build an inventory tracking web application (Image Repository) for a logistics company.  
 
 1 Task A. ADD image(s) to the repository
-    1.  private or public (permissions)
-    2.  secure uploading and stored images
-    3.  one / bulk / enormous amount of images 
+    1. private or public (permissions)
+    2. secure uploading and stored images
+    3. one / bulk / enormous amount of images 
  
 1. Step 1
 2. Step 2
