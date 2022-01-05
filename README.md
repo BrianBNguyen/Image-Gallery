@@ -4,7 +4,7 @@ Tasks: Build an inventory tracking web application (Image Gallery) for a logisti
 
  1. ADD image(s) to the repository
     1. Allow image uploads AND store image with generated thumbnails
-    2. public or private (permissions)
+    2. private or public (permissions)
     3. secure uploading and stored images
     4. one / bulk / enormous amount of images 
  2. DELETE image(s)
