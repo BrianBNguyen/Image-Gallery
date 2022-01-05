@@ -8,7 +8,7 @@ Tasks Build an image repository:
     4. one / bulk / enormous amount of images
 
 # Home/Index Page
-![image](https://user-images.githubusercontent.com/59449776/148281194-3c5bdac5-ed0a-40ca-bb13-12308abad9ef.png)
- 
+![image](https://user-images.githubusercontent.com/59449776/148281294-f9f0c491-2e0f-4efd-9ec7-78a5d45f707a.png)
+
 # URL
 Hosted Link: https://shopifybackendchallenge.000webhostapp.com/
