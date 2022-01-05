@@ -1,6 +1,6 @@
 # Image-Gallery
 Shopify Developer Applications      
-Task A: Build an image repository.
+Task A: Build an image repository.  
 Task B: Build an inventory tracking web application (Image Repository) for a logistics company.  
 
 
