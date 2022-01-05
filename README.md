@@ -1,5 +1,5 @@
 # Image-Gallery
-Shopify Backend Developer Applications      
+Shopify Developer Applications      
 Tasks: Build an inventory tracking web application (Image Gallery) for a logistics company.
 
  1. ADD inventory to the repository
