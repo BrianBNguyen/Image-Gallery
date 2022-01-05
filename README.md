@@ -1,5 +1,5 @@
 # Image-Gallery
-Shopify Developer Applications      
+Shopify Backend Developer Applications      
 Tasks Build an image repository:  
  1. ADD image(s) to the repository
     1. Allow image uploads AND store image with generated thumbnails
@@ -7,10 +7,6 @@ Tasks Build an image repository:
     3. secure uploading and stored images
     4. one / bulk / enormous amount of images
 
- 2. DELETE image(s)
-    1. one / bulk / selected / all images
-    2. Prevent a user deleting images from another user (access control)
-    3. secure deletion of images
-    
+ 
 # URL
 Hosted Link: https://shopifybackendchallenge.000webhostapp.com/
