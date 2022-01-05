@@ -7,7 +7,6 @@ Tasks: Build an inventory tracking web application (Image Gallery) for a logisti
     2. public or private (permissions)
     3. secure uploading and stored images
     4. one / bulk / enormous amount of images 
-
  2. DELETE image(s)
     1. one / bulk / selected / all images 
     2. prevent a user deleting images from another user (access control)
