@@ -12,6 +12,11 @@ Task B: Build an inventory tracking web application (Image Repository) for a log
     2. prevent a user deleting images from another user (access control)
     3. secure deletion of images
   
+  
+  
+  
+  
+  
 1. Task B: Create inventory items
     1. Allow image uploads AND store image with generated thumbnails
 
