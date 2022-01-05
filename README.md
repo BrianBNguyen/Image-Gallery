@@ -8,7 +8,12 @@ Task B: Build an inventory tracking web application (Image Repository) for a log
     2.  secure uploading and stored images
     3.  one / bulk / enormous amount of images 
  
-
+1. Step 1
+2. Step 2
+3. Step 3
+    1. Step 3.1
+    2. Step 3.2
+    3. Step 3.3
 
 # Home/Index Page
 ![image](https://user-images.githubusercontent.com/59449776/148281294-f9f0c491-2e0f-4efd-9ec7-78a5d45f707a.png)
