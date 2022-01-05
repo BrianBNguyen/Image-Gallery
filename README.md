@@ -3,7 +3,6 @@ Shopify Developer Applications
 Task A: Build an image repository.  
 Task B: Build an inventory tracking web application (Image Repository) for a logistics company.  
 
-
  1 Task A. ADD image(s) to the repository
     1. private or public (permissions)
     2. secure uploading and stored images
@@ -12,7 +11,6 @@ Task B: Build an inventory tracking web application (Image Repository) for a log
     1. one / bulk / selected / all images
     2. prevent a user deleting images from another user (access control)
     3. secure deletion of images
-    
  1 Task B. Create Inventory Items 
     1.  Allow image uploads AND store image with generated thumbnails
 
