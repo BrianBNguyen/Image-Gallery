@@ -2,7 +2,7 @@
 Shopify Developer Applications      
 Tasks: Build an inventory tracking web application (Image Gallery) for a logistics company.
 
- 1. ADD inventory to the repository
+ 1. ADD image(s) to the repository
     1. Allow image uploads AND store image with generated thumbnails
     2. public or private (permissions)
     3. secure uploading and stored images
