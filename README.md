@@ -1,5 +1,5 @@
 # Image-Gallery
-Shopify Data Engineer      
+Shopify Data Engineer Application      
 Task: Build an image repository.   
  
 1. ADD image(s) to the repository
